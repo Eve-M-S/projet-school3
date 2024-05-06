@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+</head>
+<body>
+    <header>
+        <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+            <h2 style=" margin-left: 10vw " > Welcome to Bubble My Tea  {{date|date:" d F Y "}}  </h2>
+    </header>
+    <main>
+    <div class="main-div" >
+        <div class="c1"></div>
+        <form class= "myform " method="post" action="/login/">
+        {% csrf_token %}
+            {{ form }}
+            <button method="post" id ="btn" type="submit" class="button" name="submit" value="submit">Se connecter</button>
+            <p>Pas encore de compte?</p> <a href="/">Inscris-toi</a>
+         </form>
+    </div>
+    </main>
+ 
+
+<footer></footer>
+</body>
+</html>
+
+
+

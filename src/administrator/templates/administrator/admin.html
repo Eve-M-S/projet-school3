@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+</head>
+<header>
+    <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+        <h2 style=" margin-left: 10vw " > Administrateur - Welcome {{ prenom }} {{date|date:" d F Y "}}  </h2>
+</header>
+<body>
+
+    <main>
+        <div class="main-div" >
+            <div class="c2">
+                <div class="box_lien">
+                    <a class="lien1" href="add_product/">AJOUTER UN PRODUIT</a> <br>
+                    <a class="lien1" href="update_product/">MODIFIER UN PRODUIT</a> <br>
+                    <a class="lien1" href="remove_product/">SUPPRIMER UN PRODUIT</a> <br>      
+                    <a class="lien1" href="add_user/">AJOUTER UN UTILISATEUR</a> <br>
+                    <a class="lien1" href="update_user/">MODIFIER UN UTILISATEUR</a> <br>
+                    <a class="lien1" href="remove_user/">SUPPRIMER UN UTILISATEUR</a> <br>
+                </div>
+               
+                <a class="lien2" href="/">Se deconnecter</a>
+               
+               
+            </div>
+          
+            <div class="c1">
+                <div class="c3"> 
+                {%for product in products %}
+                <p>{{product.0}}</p>
+                <p>{{product.1}} €</p>
+                <p>{{product.2}}</p>
+               
+                {% endfor %}
+                </div>
+                
+            </div>
+       
+    </main>
+    
+</body>
+</html>

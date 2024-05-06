@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="{% static 'css/profil.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+</head>
+<body>
+    <header>
+        <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+            <h2 style=" margin-left: 10vw " > Mon Profil  </h2>
+    </header>
+
+    <div>
+        <main>
+        
+        <div class="main-div" >
+            <div class="c2">
+                <div class="box_lien">
+                    
+                    <a class="lien1" href="commandes/">MES COMMANDES</a> <br>
+                    <a class="lien1" href="panier/">MON PANIER</a> <br>
+                </div>
+               
+                <a class="lien2" href="/">Se deconnecter</a>
+                
+            </div>
+          
+            <div class="c1">
+                <div class="profil1"> <p>Prénom: {{ prenom }}</p> <p>Nom: {{ nom }}</p> <p>Mail: {{ mail }}</p> <p>Adresse: {{ adresse }}</p> <p>Mot de passe: ******</p></div>
+                <form class= "profil" method="post" action="/login/dashboard/profil/">
+                    {% csrf_token %}
+                    {{modif}}
+                    <button method="post" id ="btn" type="submit" class="button" name="submit" value="submit">Modifer</button>
+                            
+                </form>   
+            </div>
+       
+    </main>
+
+
+    
+</body>
+</html>

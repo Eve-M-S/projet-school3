@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update product</title>
+    <link rel="stylesheet" href="{% static 'css/update_product.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+</head>
+<body>
+    <header>
+        <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+        <h2 style=" margin-left: 10vw " > Administrateur {{ prenom }} - Modifier un produit {{date|date:" d F Y "}}  </h2>
+    </header>
+    <div class="main-div" >
+        <div class="c2">
+            <div class="box_lien">
+            
+            </div>
+           
+            <a class="lien2" href="/">Se deconnecter</a>
+            
+        </div>
+        <div class="c1">
+            <!-- <div class="profil1"> <p>Prénom: {{ prenom }}</p> <p>Nom: {{ nom }}</p> <p>Mail: {{ mail }}</p> <p>Adresse: {{ adresse }}</p> <p>Mot de passe: ******</p></div> -->
+            <form class= "profil" method="post" action="/login/admin/update_product/">
+                {% csrf_token %}
+                {{form}}
+                <button method="post" id ="btn" type="submit" class="button" name="submit" value="submit">Modifier</button>
+                        
+            </form>   
+        </div>
+</body>
+</html>

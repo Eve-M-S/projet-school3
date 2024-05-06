@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supprimer un user</title>
+    <link rel="stylesheet" href="{% static 'css/remove_user.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+    
+</head>
+
+<body>
+    <header>
+        <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+        <h2 style=" margin-left: 10vw " > Administrateur {{ prenom }} - Supprimer un utilisateur {{date|date:" d F Y "}}  </h2>
+    </header>
+
+    <div class="main-div" >
+        <div class="c2">
+            <div class="box_lien">
+            
+            </div>
+           
+            <a class="lien2" href="/">Se deconnecter</a>
+            
+        </div>
+        <div class="c1">
+            
+            <form class= "profil" method="post" action="/login/admin/remove_user/">
+                {% csrf_token %}
+                {{form}}
+                <p> Êtes-vous sur de vouloir supprimer ce compte ? </p>
+                <button method="post" id ="btn" type="submit" class="button" name="submit" value="submit">Supprimer</button>
+                        
+            </form>   
+        </div>
+</body>
+</html>

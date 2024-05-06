@@ -1,0 +1,5 @@
+[client]
+database = bubble
+user = root
+password = eve
+default-character-set = utf8

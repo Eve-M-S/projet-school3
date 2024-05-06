@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande</title>
+    <link rel="stylesheet" href="{% static 'css/commande.css' %}">
+    <link rel="shortcut icon" href="{% static 'css/6142807.png' %}">
+</head>
+
+<header>
+    <img class ="gif" src="{% static 'css/giphy.gif' %}" alt="">
+        <h2 style=" margin-left: 10vw " > Welcome {{ prenom }} {{date|date:" d F Y "}}  </h2>
+</header>
+<body>
+
+    <main>
+        <div class="main-div" >
+            <div class="c2">
+                <div class="box_lien">
+                    <a class="lien1" href="profil/">MON PROFIL</a> <br>
+                    <a class="lien1" href="commandes/">MES COMMANDES</a> <br>
+                    <a class="lien1" href="panier/">MON PANIER</a> <br>
+                </div>
+               
+                <a class="lien2" href="/">Se deconnecter</a>
+               
+               
+            </div>
+          
+            <div class="c1">
+                <div class="c3"> 
+                {{ produit }}
+                </div>
+                
+            </div>
+       
+    </main>
+
+
+<body>
+    
+</body>
+</html>
